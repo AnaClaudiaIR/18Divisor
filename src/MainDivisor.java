@@ -1,17 +1,20 @@
-public class Main {
+public class MainDivisor {
     public static void main(String[] args) {
-        Divisor d = new Divisor();
-        d.setA(3.5);
-        d.setB(2.0);
+    Divisor divisor = new Divisor();
+        try {
+            double resultado1 = divisor.dividir(3.5,2);
+            System.out.println("El resultado es: " + resultado1);
+        } catch  (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
 
-        System.out.println("Dividendo: "+ d.getA());
-        System.out.println("Divisor: " + d.getB());
+        System.out.println("-----------------");
 
-        Divisor d2 = new Divisor();
-        d2.setA(3.5);
-        d2.setB(0);
-
-        System.out.println("Dividendo: " + d2.getA());
-        System.out.println("Divisor: " + d2.getB());
+        try {
+            double resultado2 = divisor.dividir(3.5,0);
+            System.out.println("El resultado es: " + resultado2);
+        } catch  (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
